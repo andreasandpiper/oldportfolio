@@ -381,6 +381,10 @@ h4>a:hover {
     font-size: 30px;
 }
 
+.live, .github {
+    text-decoration: none; 
+}
+
 /* ==========================================================================
    Dividers
    ========================================================================== */
@@ -660,5 +664,8 @@ label.valid {
     }
     #page-profile .profile {
         margin: 0 auto 20px auto;
+    }
+    .live, .github {
+        text-decoration: underline; 
     }
 }

@@ -86,13 +86,6 @@ $(document).ready(function () {
         }
     });
 
-
-    /* Sticky menu */
-    $(".navbar").sticky({
-        topSpacing: 0
-    });
-
-
     /* Scroll spy and scroll filter */
     $('#main-menu').onePageNav({
         currentClass: "active",
@@ -123,7 +116,7 @@ function showProjectInfo() {
     var other_desc = project.other_description;
     $("#portfolioModal").find('.modal-title').text(projectTitle);
     $("#portfolioModal").find('.modal-body img').attr('src', projectImage);
-    $("#portfolioModal").find('.modal-body span').html(projectTech);
+    $("#portfolioModal").find('.modal-body span:last-child').html(projectTech);
     $("#portfolioModal").find('.modal-body .live').attr('href', liveLink);
     $("#portfolioModal").find('.modal-body .github').attr('href', gitHubLink);
     $("#portfolioModal").find('.modal-subtitle').text(general_desc);
@@ -132,6 +125,7 @@ function showProjectInfo() {
 
     if (gitHubLink === '') {
         $("#portfolioModal").find('.modal-body .github').hide();
+        $("#portfolioModal").find('div.modal-body span:first-child').hide();
     } else {
         $("#portfolioModal").find('.modal-body .github').show();
     }
